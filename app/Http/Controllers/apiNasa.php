@@ -19,14 +19,16 @@ class apiNasa extends Controller
                 //'copyright'=>$result['copyright'],
                 'fechaConsulta' =>$result['date'],
                 'urlFoto'=>$result['hdurl'],
-                'nombre'=>$result['title']
+                'nombre'=>$result['title'],
+                'informacion'=>$result['explanation']
             ];
             astronomyPictureOfTheDay::updateOrCreate([
                 'nombre'=>$salida['nombre'],
                 'urlFoto'=>$salida['urlFoto'],
-                'fechaConsulta'=>$salida['fechaConsulta']
+                'fechaConsulta'=>$salida['fechaConsulta'],
+                'informacion'=>$salida['informacion']
             ]);
-            dd("registro exitoso");
+            return $salida;
         } catch (\Throwable $th) {
             //throw $th;
             dd($th);
