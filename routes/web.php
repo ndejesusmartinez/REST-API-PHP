@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\correosController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\apiNasa;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,5 +16,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('inicio');
 });
+//Route::post('/login',[RutasController::class,'sesion'])->name('iniciarSesion');
+Route::get('/api/correos',[correosController::class,'leerCorreos']);
+
+
+Route::post('/api/asignadorReserva',[aisgnadorReservas::class,'asignarReservas']);
+
+Route::get('/api/nasa/astronomyPictureOfTheDay',[apiNasa::class,'astronomyPictureOfTheDay']);
