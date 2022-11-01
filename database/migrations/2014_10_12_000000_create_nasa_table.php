@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('copyright');
             $table->string('fechaConsulta');
             $table->string('urlFoto'); 
-            $table->string('nombre');
+            $table->string('nombre')->unique();
         });
     }
 };

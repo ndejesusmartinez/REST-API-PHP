@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\astronomyPictureOfTheDay;
 use Illuminate\Http\Request;
 
 class apiNasa extends Controller
@@ -14,14 +14,19 @@ class apiNasa extends Controller
             curl_close($ch);
             $data = curl_exec($ch);
             $result = (array)json_decode($data);
-            //dd($result);
+            //dd($result['date']);
             $salida = [
-                'copyright'=>$result['copyright'],
+                //'copyright'=>$result['copyright'],
                 'fechaConsulta' =>$result['date'],
                 'urlFoto'=>$result['hdurl'],
                 'nombre'=>$result['title']
             ];
-            return $salida;
+            astronomyPictureOfTheDay::updateOrCreate([
+                'nombre'=>$salida['nombre'],
+                'urlFoto'=>$salida['urlFoto'],
+                'fechaConsulta'=>$salida['fechaConsulta']
+            ]);
+            dd("registro exitoso");
         } catch (\Throwable $th) {
             //throw $th;
             dd($th);

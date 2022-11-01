@@ -17,7 +17,7 @@ class astronomyPictureOfTheDay extends Model
      * @var array<int, string>
      */
     protected $fillable = [
-        'copyright',
+        //'copyright',
         'fechaConsulta',
         'urlFoto',
         'nombre',
