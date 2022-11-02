@@ -14,12 +14,12 @@ class apiNasa extends Controller
             curl_close($ch);
             $data = curl_exec($ch);
             $result = (array)json_decode($data);
-            //dd($result['date']);
+            //dd($result);
             $salida = [
                 //'copyright'=>$result['copyright'],
-                'fechaConsulta' =>$result['date'],
-                'urlFoto'=>$result['hdurl'],
-                'nombre'=>$result['title'],
+                'fechaConsulta' =>$result['date'] ?? '',
+                'urlFoto'=>$result['hdurl'] ?? '',
+                'nombre'=>$result['title'] ?? '',
                 'informacion'=>$result['explanation']
             ];
             astronomyPictureOfTheDay::updateOrCreate([
