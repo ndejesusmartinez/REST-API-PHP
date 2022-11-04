@@ -3,6 +3,7 @@
 use App\Http\Controllers\correosController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\apiNasa;
+use App\Http\Controllers\apiMArvel;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,3 +26,5 @@ Route::get('/api/correos',[correosController::class,'leerCorreos']);
 Route::post('/api/asignadorReserva',[aisgnadorReservas::class,'asignarReservas']);
 
 Route::get('/api/nasa/astronomyPictureOfTheDay',[apiNasa::class,'astronomyPictureOfTheDay']);
+
+Route::get('/api/marvel/heroes',[apiMArvel::class,'marvel']);
