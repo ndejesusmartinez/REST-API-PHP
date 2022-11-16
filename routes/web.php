@@ -28,3 +28,5 @@ Route::post('/api/asignadorReserva',[aisgnadorReservas::class,'asignarReservas']
 Route::get('/api/nasa/astronomyPictureOfTheDay',[apiNasa::class,'astronomyPictureOfTheDay']);
 
 Route::get('/api/marvel/heroes',[apiMArvel::class,'marvel']);
+
+Route::get('/api/marvel/event',[apiMArvel::class,'eventos']);
