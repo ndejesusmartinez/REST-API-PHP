@@ -31,7 +31,7 @@ class apiNasa extends Controller
             return $salida;
         } catch (\Throwable $th) {
             //throw $th;
-            dd($th);
+            dd("Error".$th);
         }
     }
 }
