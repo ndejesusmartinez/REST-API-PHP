@@ -30,3 +30,5 @@ Route::get('/api/nasa/astronomyPictureOfTheDay',[apiNasa::class,'astronomyPictur
 Route::get('/api/marvel/heroes',[apiMArvel::class,'marvel']);
 
 Route::get('/api/marvel/event',[apiMArvel::class,'eventos']);
+
+Route::get('/api/dian',[apiMArvel::class,'dian']);
